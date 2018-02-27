@@ -1,0 +1,13 @@
+/* body{
+    background:url('../images/backgroundImage.png') no-repeat top center fixed;
+} */
+
+.jumbotron{
+    margin-top: 10px;
+}
+
+.btn{
+    width: 50%;
+    position: absolute;
+    top: 50%;
+}
