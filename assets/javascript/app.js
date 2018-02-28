@@ -9,7 +9,7 @@ var questions = [
             b: "Washington D.C.",
             c: "Miami",
         },
-        correctAnswer: "c"
+        correctAnswer: "b"
     },
     {
         id: 2,
@@ -19,7 +19,7 @@ var questions = [
             b: "Asia",
             c: "North America",
         },
-        correctAnswer: "b"
+        correctAnswer: "a"
     },
     {
         id: 3,
@@ -43,7 +43,7 @@ var questions = [
     }
 ];
 
-var attemptedCount = 0;
+var unAttempted = 0;
 var correctCount = 0;
 var wrongCount = 0;
 var quizTime = 100;
@@ -106,11 +106,35 @@ $(document).ready(function () {
     function displayScore() {
         $("#correct").html("Correct answers : " + correctCount);
         $("#wrong").html("Wrong answers : " + wrongCount);
-        $("#attempted").html("You attempted : " + attemptedCount);
+        $("#attempted").html("You attempted : " + unAttempted);
 
     }
 
     function getResults(){
+        var contList = $("#quizContainer").find(".form-check-input");
+		var selector;
+		
+		 questions.forEach(
+            (questObj, questionNumber) => {
+				
+				//selector = contList[questionNumber];
+				//selector = $('input[name=question'+questionNumber+']:checked');
+				 selector = $('input[name=question'+questionNumber+']:checked').val();
+				
+				if (selector === undefined)
+				{
+					console.log($(selector).val());
+				  unAttempted++;
+				}
+				else if(questObj.correctAnswer === selector)
+				{
+					correctCount++;
+				}
+				else{
+					wrongCount++;
+				}
+				
+			});
         
     }
 
