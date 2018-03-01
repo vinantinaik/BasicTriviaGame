@@ -12,37 +12,55 @@
     <link rel="stylesheet" href="./assets/css/style.css">
     <title>Trivia Game</title>
 
-    <div class="container">
-        <div class="jumbotron jumbotron-fluid">
-            <h1 class="display-4">Totally Trivia! Trivia!</h1>
-            <hr class="my-4">
-            <p class="lead">
-                <button id="start" class="btn btn-primary btn-lg" value="start">Start</button>
-            </p>
-            <div id="time-left">
 
-            </div>
-        </div>
-        <form>
-            <div id="quizContainer" >
-
-            </div>
-        </form>
-        <div id="result">
-            <h3 id="attempted"></h3>
-            <h3 id="correct"></h3>
-            <h3 id="wrong"></h3>
-
-        </div>
-
-
-
-    </div>
 </head>
 
 <body>
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+
+        <div class="navbar-header">
+            <h1 id="time-left"> </h1>
+        </div>
+
+    </nav>
 
 
+
+    <main role="main">
+        <div class="jumbotron">
+            <div class="container">
+                <h1 class="display-4 text-center">Totally Trivia! Trivia!</h1>
+                <hr class="my-4">
+                <p class="lead">
+                    <button id="start" class="btn btn-primary btn-lg" value="start">Start</button>
+                </p>
+
+            </div>
+        </div>
+        <div class="container">
+
+            <form>
+                <div id="quizContainer">
+
+                </div>
+
+            </form>
+            <div id="result">
+                <h2>All Done!!!</h2>
+                <h3 id="unanswered"></h3>
+                <h3 id="correct"></h3>
+                <h3 id="wrong"></h3>
+
+            </div>
+
+        </div>
+    </main>
+    <nav class="navbar navbar-expand-md navbar-dark fixed-bottom bg-dark">
+        <div class="container">
+            <button id="submit" type="button" class="btn btn-primary" value="submit">Submit</button>
+        </div>
+
+    </nav>
 
     <!-- Added a link to import jQuery and javascript files-->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
